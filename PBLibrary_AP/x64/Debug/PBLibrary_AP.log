@@ -1,0 +1,273 @@
+﻿已經開始建置於 2017/3/6 下午11:28:46。
+     1>節點 2 (Build 目標) 上的專案 "\\Mac\Home\Documents\Visual Studio 2013\Projects\PBLibrary_AP\PBLibrary_AP\PBLibrary_AP.vcxproj"。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Development\BioMatchMobile_ALA1501010-R3S00\BMF\inc" /IC:\Development\opencv\build\include /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"x64\Debug\PBLibrary_AP.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /errorReport:prompt /clr:nostdlib stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Development\BioMatchMobile_ALA1501010-R3S00\BMF\inc" /IC:\Development\opencv\build\include /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Debug\PBLibrary_AP.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /errorReport:prompt /clr:nostdlib AssemblyInfo.cpp PBLibrary_AP.cpp pb_ctl_secure.cpp
+         AssemblyInfo.cpp
+         PBLibrary_AP.cpp
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(103): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(104): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(105): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(106): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(112): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : 請參閱 'localtime' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1281): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1283): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1295): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1303): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1309): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1311): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1319): warning C4244: '引數' : 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1448): warning C4244: '引數' : 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1562): warning C4244: '引數' : 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1586): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1587): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1612): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1613): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1614): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1615): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1616): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1617): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1618): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1619): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1623): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1681): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1682): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1779): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1793): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1794): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1795): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1796): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1801): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1802): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1803): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1804): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1805): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1924): warning C4244: '引數' : 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1931): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1932): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1933): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1934): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1935): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1936): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1937): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1938): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(1939): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2045): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2046): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2125): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2126): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2127): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2128): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2135): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2136): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2137): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2138): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2139): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2143): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2144): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2145): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2146): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2147): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2206): warning C4244: '引數' : 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2339): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : 請參閱 'localtime' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2468): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2469): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2470): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2471): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2473): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2474): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2475): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2476): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2481): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2773): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2774): warning C4965: 整數 0 的隱含 Box，請使用 nullptr 或明確轉型
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2808): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2809): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2810): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2811): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2812): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2813): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2814): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2815): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>\\mac\home\documents\visual studio 2013\projects\pblibrary_ap\pblibrary_ap\PBGUI.h(2819): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+         pb_ctl_secure.cpp
+     1>pb_ctl_secure.cpp(218): warning C4101: 'img_buffer_301c' : 未參考的區域變數
+     1>pb_ctl_secure.cpp(219): warning C4101: 'img_buffer_501' : 未參考的區域變數
+     1>pb_ctl_secure.cpp(626): warning C4313: 'printf'  : 格式字串中的 '%d' 與引數 1 (屬於類型 'const uint8_t *') 衝突
+     1>pb_ctl_secure.cpp(675): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 請參閱 'fopen' 的宣告
+     1>pb_ctl_secure.cpp(960): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : 請參閱 'localtime' 的宣告
+     1>pb_ctl_secure.cpp(967): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(968): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(969): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(970): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(971): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(972): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(975): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>pb_ctl_secure.cpp(977): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(323) : 請參閱 'access' 的宣告
+     1>pb_ctl_secure.cpp(954): warning C4101: 'fp' : 未參考的區域變數
+     1>pb_ctl_secure.cpp(1133): warning C4101: 'file' : 未參考的區域變數
+     1>pb_ctl_secure.cpp(1182): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>pb_ctl_secure.cpp(1185): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(323) : 請參閱 'access' 的宣告
+     1>pb_ctl_secure.cpp(1190): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 請參閱 'fopen' 的宣告
+     1>pb_ctl_secure.cpp(1229): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1230): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1233): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1234): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1240): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>pb_ctl_secure.cpp(1243): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(323) : 請參閱 'access' 的宣告
+     1>pb_ctl_secure.cpp(1248): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 請參閱 'fopen' 的宣告
+     1>pb_ctl_secure.cpp(1283): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1284): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1277): warning C4101: 'path' : 未參考的區域變數
+     1>pb_ctl_secure.cpp(1309): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : 請參閱 'localtime' 的宣告
+     1>pb_ctl_secure.cpp(1313): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1314): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1315): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1316): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1317): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1318): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1320): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1321): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1322): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1323): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1325): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>pb_ctl_secure.cpp(1326): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>pb_ctl_secure.cpp(1329): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 請參閱 'fopen' 的宣告
+     1>pb_ctl_secure.cpp(1363): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1364): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1366): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 請參閱 'strcpy' 的宣告
+     1>pb_ctl_secure.cpp(1367): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 請參閱 'strcat' 的宣告
+     1>pb_ctl_secure.cpp(1372): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 請參閱 'sprintf' 的宣告
+     1>pb_ctl_secure.cpp(1375): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 請參閱 'fopen' 的宣告
+         正在產生程式碼...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"\\Mac\Home\Documents\Visual Studio 2013\Projects\PBLibrary_AP\x64\Debug\PBLibrary_AP.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Development\BioMatchMobile_ALA1501010-R3S00\BMF\lib\x86_64-w64-mingw32" /LIBPATH:C:\Development\opencv\build\x64\vc12\lib opencv_core2413d.lib opencv_highgui2413d.lib BMF.lib "mingw-gcc.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /ASSEMBLYRESOURCE:x64\Debug\PBLibrary_AP.PBGUI.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\Mac\Home\Documents\Visual Studio 2013\Projects\PBLibrary_AP\x64\Debug\PBLibrary_AP.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 x64\Debug\app.res
+         x64\Debug\AssemblyInfo.obj
+         x64\Debug\PBLibrary_AP.obj
+         x64\Debug\pb_ctl_secure.obj
+         x64\Debug\stdafx.obj
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000013) (╣∩ 'pb_image_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>PBLibrary_AP.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000046) (╣∩ 'pb_image_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>PBLibrary_AP.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (0100004B) (╣∩ 'CvCapture' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000014) (╣∩ 'pb_algorithm_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000015) (╣∩ 'pb_session_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000016) (╣∩ 'pb_finger_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000017) (╣∩ 'pb_quality_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (01000018) (╣∩ 'pb_template_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (0100001B) (╣∩ 'pb_alignment_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+     1>pb_ctl_secure.obj : warning LNK4248: ╡L¬k╕╤¬R¬║ typeref ╗y╖J░≥ñ╕ (0100001C) (╣∩ 'pb_multitemplate_enroll_st' ª╙¿Ñ)íA¼M╣│Ñi»α╡L¬k░⌡ªµ
+         PBLibrary_AP.vcxproj -> \\Mac\Home\Documents\Visual Studio 2013\Projects\PBLibrary_AP\x64\Debug\PBLibrary_AP.exe
+     1>專案 "\\Mac\Home\Documents\Visual Studio 2013\Projects\PBLibrary_AP\PBLibrary_AP\PBLibrary_AP.vcxproj" (Build 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:03.98
