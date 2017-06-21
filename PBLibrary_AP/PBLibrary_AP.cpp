@@ -7,7 +7,7 @@
 using namespace PBLibrary_AP;
 
 [STAThreadAttribute]
-int main(array<System::String ^> ^args)
+int main(cli::array<System::String ^> ^args)
 {  
 	// 建立任何控制項之前，先啟用 Window 的視覺化效果
 	Application::EnableVisualStyles();

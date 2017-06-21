@@ -215,8 +215,8 @@ int lib_init(void)
 	int image_dpi = 508;
 	uint8_t* image_buf = 0;
 
-	unsigned char img_buffer_301c[14400];
-	unsigned char img_buffer_501[30976];
+	//unsigned char img_buffer_301c[14400];
+	//unsigned char img_buffer_501[30976];
 
 	image_buf = (uint8_t*)malloc(g_sensor_img_buffer);
 	memset(image_buf, 0, g_sensor_img_buffer);
@@ -623,7 +623,7 @@ int verify_finish(void)
 		uint32_t data_size = pb_template_get_data_size(gp_dyn_updated);
 
 		printf("type = %d\n", type);
-		printf("data = %d\n", data);
+		//printf("data = %d\n", data);
 		printf("data_size = %d\n", data_size);
 
 		//if (Opt.mt_size_bytes - data_size > 1200) {
@@ -670,10 +670,11 @@ static pb_image_t* read_image(const char* filename)
 
 	if (strstr(filename, ".raw")) {
 		FILE * fd;
+		errno_t err;
 		unsigned char img_buf[14400];
 
-		if ((fd = fopen(filename, "r")) != NULL) {
-		
+		//if ((fd = fopen(filename, "r")) != NULL) {
+		if ((err = fopen_s(&fd, filename, "r")) == 0) {
 			printf("File open OK!\n");
 			fread(img_buf, 14400, 1, fd);
 			fclose(fd);
@@ -951,30 +952,30 @@ static pb_rc_t ui_display_progress(pb_session_t* session, uint16_t completed, ui
 
 int file_check_available_index(int* file_index)
 {
-	FILE* fp;
+	//FILE* fp;
 	char buf[200];
 	char string[200];
 	time_t		now = time(0);
 	struct tm	tstruct;
 	char		date_buf[80];
-	tstruct = *localtime(&now);
+	localtime_s(&tstruct, &now);
 
 	int i = 1;
 	*file_index = -1;
 
 	strftime(date_buf, sizeof(date_buf), "%Y%m%d", &tstruct);
 	
-	strcpy(string, g_finger_database_path);
-	strcat(string, "\\");
-	strcat(string, date_buf);
-	strcat(string, "_");
-	strcat(string, g_finger_name);
-	strcat(string, "_%02d.bir");
+	strcpy_s(string, 200, g_finger_database_path);
+	strcat_s(string, sizeof(string), "\\");
+	strcat_s(string, sizeof(string), date_buf);
+	strcat_s(string, sizeof(string), "_");
+	strcat_s(string, sizeof(string), g_finger_name);
+	strcat_s(string, sizeof(string), "_%02d.bir");
 
 	while (true) {
-		sprintf(buf, string, i);
+		sprintf_s(buf, sizeof(buf), string, i);
 		printf("file_check_available_index => %s\n", buf);
-		if (access(buf, 0) == -1) {
+		if (_access(buf, 0) == -1) {
 			printf("Found index %d is available\n", i);
 			*file_index = i;
 			break;
@@ -1130,7 +1131,7 @@ static int file_save_template(const char* finger_name, int finger_idx)
 {
 	int res = -1;
 	pb_template_t* templ = 0;
-	char file;
+	//char file;
 	string a;
 	
 	if (finger_idx != -1) {
@@ -1173,22 +1174,25 @@ static int file_load_template(void)
 static pb_template_t* file_read_template(int finger)
 {
 	FILE* fp;
+	errno_t err;
 	size_t size;
 	char filename[100];
 	uint8_t type;
 	uint8_t* data;
 	pb_template_t* templ = 0;
 
-	sprintf(filename, "database/multi-template-%d.bir", finger);
+	sprintf_s(filename, sizeof(filename), "database/multi-template-%d.bir", finger);
 	//sprintf(filename, "database/%4d%2d%02d_finger_%d.bir", year, month, mday, finger);
 	
-	if (access(filename, 0) == -1) {
+	if (_access(filename, 0) == -1) {
 		printf("access %s = -1\n", filename);
 		return 0;
 	}
 
-	fp = fopen(filename, "rb");
-	if (fp == 0) {
+	//fp = fopen(filename, "rb");
+	err = fopen_s(&fp, filename, "rb");
+	//if (fp == 0) {
+	if (err != 0) {
 		printf("FILE open failed: %s\n", filename);
 		return 0;
 	}
@@ -1213,6 +1217,7 @@ static pb_template_t** file_read_template_array(int template_size)
 {
 	printf("\n file_read_template_array...\n");
 	FILE* fp;
+	errno_t err;
 	size_t size;
 	char filename[200];
 	char string[200];
@@ -1226,27 +1231,29 @@ static pb_template_t** file_read_template_array(int template_size)
 	intptr_t hFile = 0;
 	int i = 0;
 
-	strcpy(filename, g_finger_database_path);
-	strcat(filename, "\\*.bir");
+	strcpy_s(filename, 200, g_finger_database_path);
+	strcat_s(filename, sizeof(filename), "\\*.bir");
 	//printf("filename => %s\n", filename);
 
-	strcpy(string, g_finger_database_path);
-	strcat(string, "\\%s");
+	strcpy_s(string, 200, g_finger_database_path);
+	strcat_s(string, sizeof(string), "\\%s");
 	//printf("string => %s\n", string);
 
 	hFile = _findfirst(filename, &c_file);
 	if (hFile != -1) {
 		do {
-			sprintf(path, string, c_file.name);
+			sprintf_s(path, sizeof(path), string, c_file.name);
 			//printf("template path => %s\n", path);
 			//printf("template name => %s\n", c_file.name);
-			if (access(path, 0) == -1) {
+			if (_access(path, 0) == -1) {
 				printf("access %s = -1\n", path);
 				return 0;
 			}
 
-			fp = fopen(path, "rb");
-			if (fp == 0) {
+			//fp = fopen(path, "rb");
+			err = fopen_s(&fp, path, "rb");
+			//if (fp == 0) {
+			if (err != 0) {
 				printf("FILE open failed: %s\n", path);
 				return 0;
 			}
@@ -1274,14 +1281,14 @@ static pb_template_t** file_read_template_array(int template_size)
 
 static int get_templates_size()
 {
-	char path[100];
+	//char path[100];
 	char filename[100];
 	struct _finddata_t c_file;
 	intptr_t hFile;
 	int size = 0;
 
-	strcpy(filename, g_finger_database_path);
-	strcat(filename, "\\*.bir");
+	strcpy_s(filename, 100, g_finger_database_path);
+	strcat_s(filename, sizeof(filename), "\\*.bir");
 
 	hFile = _findfirst(filename, &c_file);
 	if (hFile != -1) {
@@ -1295,6 +1302,7 @@ static int get_templates_size()
 static int file_write_template(pb_template_t* templated, const char* finger_name, int finger)
 {
 	FILE* fp;
+	errno_t err;
 	char filename[200];
 	uint8_t type		= (uint8_t) pb_template_get_type(templated);
 	const uint8_t* data = pb_template_get_data(templated);
@@ -1306,29 +1314,31 @@ static int file_write_template(pb_template_t* templated, const char* finger_name
 	time_t		now = time(0);
 	struct tm	tstruct;
 	char		buf[80];
-	tstruct = *localtime(&now);
+	localtime_s(&tstruct, &now);
 
 	strftime(buf, sizeof(buf), "%Y%m%d", &tstruct);
 
-	strcpy(string, g_finger_database_path);
-	strcat(string, "\\");
-	strcat(string, buf);
-	strcat(string, "_");
-	strcat(string, finger_name);
-	strcat(string, "_%02d.bir");
+	strcpy_s(string, 200, g_finger_database_path);
+	strcat_s(string, sizeof(string), "\\");
+	strcat_s(string, sizeof(string), buf);
+	strcat_s(string, sizeof(string), "_");
+	strcat_s(string, sizeof(string), finger_name);
+	strcat_s(string, sizeof(string), "_%02d.bir");
 
-	strcpy(outputstring, buf);
-	strcat(outputstring, "_");
-	strcat(outputstring, finger_name);
-	strcat(outputstring, "_%02d.bir");
+	strcpy_s(outputstring, 80, buf);
+	strcat_s(outputstring, sizeof(outputfilename), "_");
+	strcat_s(outputstring, sizeof(outputfilename), finger_name);
+	strcat_s(outputstring, sizeof(outputfilename), "_%02d.bir");
 
-	sprintf(filename, string, finger);
-	sprintf(outputfilename, outputstring, finger);
+	sprintf_s(filename, sizeof(filename), string, finger);
+	sprintf_s(outputfilename, sizeof(outputfilename), outputstring, finger);
 	printf("outputfilename => %s\n", outputfilename);
 
-	fp = fopen(filename, "wb");
+	//fp = fopen(filename, "wb");
+	err = fopen_s(&fp, filename, "wb");
 	printf("%s\n", filename);
-	if (fp == 0) {
+	//if (fp == 0) {
+	if (err != 0) {
 		printf("FILE open failed: %s\n", filename);
 		return -1;
 	}
@@ -1349,6 +1359,7 @@ static int file_write_template_update(pb_template_t* templated, int match_idx)
 {
 	printf("\n file_write_template_update...\n");
 	FILE* fp;
+	errno_t err;
 	char filename[100];
 	uint8_t type = (uint8_t)pb_template_get_type(templated);
 	const uint8_t* data = pb_template_get_data(templated);
@@ -1360,21 +1371,22 @@ static int file_write_template_update(pb_template_t* templated, int match_idx)
 	intptr_t hFile = 0;
 	int i = 0;
 
-	strcpy(filename, g_finger_database_path);
-	strcat(filename, "\\*.bir");
+	strcpy_s(filename, 100, g_finger_database_path);
+	strcat_s(filename, sizeof(filename), "\\*.bir");
 
-	strcpy(string, g_finger_database_path);
-	strcat(string, "\\%s");
+	strcpy_s(string, 100, g_finger_database_path);
+	strcat_s(string, sizeof(string), "\\%s");
 
 	hFile = _findfirst(filename, &c_file);
 	if (hFile != -1) {
 		do {
-			sprintf(path, string, c_file.name);
+			sprintf_s(path, sizeof(path), string, c_file.name);
 			
 			if (i == match_idx) {
-				fp = fopen(path, "wb");
+				//fp = fopen(path, "wb");
+				err = fopen_s(&fp, path, "wb");
 				printf("%s\n", path);
-				if (fp == 0) {
+				if (err != 0) {
 					printf("FILE open failed: %s\n", filename);
 					return -1;
 				}

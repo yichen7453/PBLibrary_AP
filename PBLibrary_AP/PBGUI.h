@@ -18,6 +18,8 @@
 #include <iostream>
 #include <fstream>
 #include <conio.h>
+#include <tuple>
+#include <functional>
 
 
 namespace PBLibrary_AP {
@@ -35,7 +37,7 @@ namespace PBLibrary_AP {
 	using namespace System::Runtime::InteropServices;
 	using namespace System::Threading;
 
-	using namespace std;
+	//using namespace std;
 
 	vector<string> FILENAME = vector<string>();
 	vector<string> FILEPATH = vector<string>();
@@ -71,7 +73,7 @@ namespace PBLibrary_AP {
 	char listViewFile[200];
 
 	char imageFile[100];
-	char logo[100];
+	char logo[200];
 	char fingerprint_enrollScan[200];
 	char fingerprint_enrollProgress[200];
 	char fingerprint_enrollFinish[200];
@@ -95,21 +97,18 @@ namespace PBLibrary_AP {
 	public:
 		PBGUI(void)
 		{
-			InitializeComponent();
-			//
-			//TODO:  在此加入建構函式程式碼
-			//			
+			InitializeComponent();					
 
-			strcpy(file_path_string, app_path);
-			strcat(file_path_string, "\\res");
-			strcat(file_path_string, "\\logo.png");
-			sprintf(logo, file_path_string);
+			strcpy_s(file_path_string, 200, app_path);
+			strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+			strcat_s(file_path_string, sizeof(file_path_string), "\\logo.png");
+			sprintf_s(logo, sizeof(logo), file_path_string);
 			logoImage = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)logo));
 			pictureBox1->Image = logoImage;
 
 			time_t		now = time(0);
 			struct tm	tstruct;
-			tstruct = *localtime(&now);
+			localtime_s(&tstruct, &now);
 
 			strftime(date_buf, sizeof(date_buf), "%Y%m%d", &tstruct);			
 			//printf("date => %s\n", date_buf);
@@ -227,9 +226,9 @@ namespace PBLibrary_AP {
 		/// <summary>
 		/// 設計工具所需的變數。
 		/// </summary>
-		array<System::String^>^ fileList;
-		array<System::Drawing::Bitmap^>^ enrollProgressImage;
-		array<System::String^>^ filePath; 
+		cli::array<System::String^>^ fileList;
+		cli::array<System::Drawing::Bitmap^>^ enrollProgressImage;
+		cli::array<System::String^>^ filePath; 
 
 		Bitmap^ logoImage;
 		Bitmap^ enrollScan;
@@ -259,10 +258,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
-		/// 修改這個方法的內容。
-		/// </summary>
+		
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
@@ -1278,9 +1274,9 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 					 if ((int)dWidth == 120 && (int)dHeight == 120) {
 						 printf("VideoCapture(%d) is open.\n", i);	
 
-						 set_adjust_parameter(dWidth, dHeight);
+						 set_adjust_parameter((int)dWidth, (int)dHeight);
 
-						 setSensorType(dWidth, dHeight);
+						 setSensorType((int)dWidth, (int)dHeight);
 
 						 control_item_enable(true);
 						 btnOpen_device->Enabled = false;
@@ -1292,7 +1288,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 					 }
 					 else if ((int)dWidth == 176 && (int)dHeight == 176) {
 						 printf("VideoCapture(%d) is open.\n", i);					
-						 set_adjust_parameter(dWidth, dHeight);
+						 set_adjust_parameter((int)dWidth, (int)dHeight);
 
 						 control_item_enable(true);
 						 btnOpen_device->Enabled = false;	
@@ -1300,15 +1296,13 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 						 deviceNumber = i;
 
-						 setSensorType(dWidth, dHeight);
+						 setSensorType((int)dWidth, (int)dHeight);
 
 						 break;
 					 }
 					 else if ((int)dWidth == 128 && (int)dHeight == 128) {
 						 printf("VideoCapture(%d) is open.\n", i);
-						 set_adjust_parameter(dWidth, dHeight);
-
-						 setSensorType(dWidth, dHeight);
+						 set_adjust_parameter((int)dWidth, (int)dHeight);
 
 						 control_item_enable(true);
 						 btnOpen_device->Enabled = false;
@@ -1316,7 +1310,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 						 deviceNumber = i;
 
-						 setSensorType(dWidth, dHeight);
+						 setSensorType((int)dWidth, (int)dHeight);
 
 						 break;
 					 }
@@ -1445,7 +1439,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 							 Graphics^ graphics = Graphics::FromImage(pictureBox1->Image);
 							 System::Drawing::Bitmap^ bmp = gcnew System::Drawing::Bitmap(frame->width, frame->height, frame->widthStep,
 								 System::Drawing::Imaging::PixelFormat::Format24bppRgb, (System::IntPtr)frame->imageData);
-							 System::Drawing::RectangleF rect(0, 0, pictureBox1->Width, pictureBox1->Height);
+							 System::Drawing::RectangleF rect(0, 0, (float)pictureBox1->Width, (float)pictureBox1->Height);
 							 graphics->DrawImage(bmp, rect);
 
 							 pb_gif->Visible = true;
@@ -1559,7 +1553,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 						Graphics^ graphics = Graphics::FromImage(pictureBox1->Image);
 						System::Drawing::Bitmap^ b = gcnew System::Drawing::Bitmap(frame->width, frame->height, frame->widthStep,
 							System::Drawing::Imaging::PixelFormat::Format24bppRgb, (System::IntPtr)frame->imageData);
-						System::Drawing::RectangleF rect(0, 0, pictureBox1->Width, pictureBox1->Height);
+						System::Drawing::RectangleF rect(0, 0, (float)pictureBox1->Width, (float)pictureBox1->Height);
 						graphics->DrawImage(b, rect);
 					}
 				}
@@ -1583,8 +1577,8 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 				 textBox2->Focus();
 
-				 label_quality->Text = "  " + 0;
-				 label_area->Text = "  " + 0;
+				 label_quality->Text = "  " + "0";
+				 label_area->Text = "  " + "0";
 
 				 if (start_capture) {
 					 capture_timer->Stop();
@@ -1609,18 +1603,17 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 					 if (enroll_save_image) {
 						 char imagePath[200];
 						 char string[200];
-						 strcpy(string, (char*)(void*)Marshal::StringToHGlobalAnsi(image_type_path));
-						 strcat(string, "\\");
-						 strcat(string, date_buf);
-						 strcat(string, "_");
-						 strcat(string, filename);
-						 strcat(string, "_");
-						 strcat(string, finger_idx_buf);
-						 strcat(string, "_%d.png");
+						 strcpy_s(string, 200, (char*)(void*)Marshal::StringToHGlobalAnsi(image_type_path));
+						 strcat_s(string, sizeof(string), "\\");
+						 strcat_s(string, sizeof(string), date_buf);
+						 strcat_s(string, sizeof(string), "_");
+						 strcat_s(string, sizeof(string), filename);
+						 strcat_s(string, sizeof(string), "_");
+						 strcat_s(string, sizeof(string), finger_idx_buf);
+						 strcat_s(string, sizeof(string), "_%d.png");
 
-						 for (int i = 1; i <= max_samples; i++)
-						 {
-							 sprintf(imagePath, string, i);
+						 for (int i = 1; i <= max_samples; i++) {
+							 sprintf_s(imagePath, sizeof(imagePath), string, i);
 							 remove(imagePath);
 						 }
 					 }
@@ -1678,8 +1671,8 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 				 pb_gif->Visible = false;
 
-				 label_quality->Text = "  " + 0;
-				 label_area->Text = "  " + 0;
+				 label_quality->Text = "  " + "0";
+				 label_area->Text = "  " + "0";
 
 				 textBox2->Focus();
 
@@ -1726,8 +1719,6 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 						 label1->ForeColor = Color::Black;
 						 label1->TextAlign = ContentAlignment::BottomCenter;
 						 label1->Text = "Place finger on device, lift it off, \n then repeat.\n";
-						 //label1->Text += "Move finger upwards/downwards slightly between attempts.\n";
-						 //label1->Refresh();
 
 						 lb_open_message_visible(false);
 						 lb_enroll_message_visible(false);
@@ -1776,7 +1767,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 							 set_archive_path(nativeChar, filename);
 							 finger_idx = enroll_setup();
 						 }
-						 sprintf(finger_idx_buf, "%02d", finger_idx);
+						 sprintf_s(finger_idx_buf, sizeof(finger_idx_buf), "%02d", finger_idx);
 
 						 quality_chk_flag = true;	
 						 get_frame = true;
@@ -1790,19 +1781,19 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 						 printf("ENROLLMENT - starting capturing and enrollment\n");
 						 printf("----------------------------------------------\n");
 						 
-						 strcpy(file_path_string, app_path);
-						 strcat(file_path_string, "\\res");
-						 strcat(file_path_string, "\\fingerprint_enroll_scan.gif");
-						 sprintf(fingerprint_enrollScan, file_path_string);
+						 strcpy_s(file_path_string, 200, app_path);
+						 strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+						 strcat_s(file_path_string, sizeof(file_path_string), "\\fingerprint_enroll_scan.gif");
+						 sprintf_s(fingerprint_enrollScan, sizeof(fingerprint_enrollScan), file_path_string);
 						 enrollScan = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)fingerprint_enrollScan));
 						 pb_gif->Visible = true;
 						 pb_gif->Image = enrollScan;
 
-						 strcpy(file_path_string, app_path);
-						 strcat(file_path_string, "\\res");
-						 strcat(file_path_string, "\\enroll");
-						 strcat(file_path_string, "\\fingerprint_enroll_progress-00.png");
-						 sprintf(fingerprint_enrollProgress, file_path_string);
+						 strcpy_s(file_path_string, 200, app_path);
+						 strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+						 strcat_s(file_path_string, sizeof(file_path_string), "\\enroll");
+						 strcat_s(file_path_string, sizeof(file_path_string), "\\fingerprint_enroll_progress-00.png");
+						 sprintf_s(fingerprint_enrollProgress, sizeof(fingerprint_enrollProgress), file_path_string);
 						 enrollProgress = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)fingerprint_enrollProgress));
 						 pb_png->Visible = true;
 						 pb_png->Parent = pb_gif;
@@ -1921,22 +1912,22 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 									 Graphics^ graphics = Graphics::FromImage(pictureBox1->Image);
 									 System::Drawing::Bitmap^ b = gcnew System::Drawing::Bitmap(frame->width, frame->height, frame->widthStep,
 										 System::Drawing::Imaging::PixelFormat::Format24bppRgb, (System::IntPtr)frame->imageData);
-									 System::Drawing::RectangleF rect(0, 0, pictureBox1->Width, pictureBox1->Height);
+									 System::Drawing::RectangleF rect(0, 0, (float)pictureBox1->Width, (float)pictureBox1->Height);
 									 graphics->DrawImage(b, rect);
 
 									 if (enroll_save_image) {
 										 char imagePath[200];
 										 char string[200];
 										
-										 strcpy(string, (char*)(void*)Marshal::StringToHGlobalAnsi(image_type_path));
-										 strcat(string, "\\");
-										 strcat(string, date_buf);
-										 strcat(string, "_");
-										 strcat(string, filename);
-										 strcat(string, "_");
-										 strcat(string, finger_idx_buf);
-										 strcat(string, "_%d.png");
-										 sprintf(imagePath, string, num_accepted);
+										 strcpy_s(string, 200, (char*)(void*)Marshal::StringToHGlobalAnsi(image_type_path));
+										 strcat_s(string, sizeof(string), "\\");
+										 strcat_s(string, sizeof(string), date_buf);
+										 strcat_s(string, sizeof(string), "_");
+										 strcat_s(string, sizeof(string), filename);
+										 strcat_s(string, sizeof(string), "_");
+										 strcat_s(string, sizeof(string), finger_idx_buf);
+										 strcat_s(string, sizeof(string), "_%d.png");
+										 sprintf_s(imagePath, sizeof(imagePath), string, num_accepted);
 										 b->Save(Marshal::PtrToStringAnsi((IntPtr)imagePath), ImageFormat::Png);
 									 }
 								 }
@@ -2042,8 +2033,8 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 				 textBox2->Focus();
 
-				 label_quality->Text = "  " + 0;
-				 label_area->Text = "  " + 0;
+				 label_quality->Text = "  " + "0";
+				 label_area->Text = "  " + "0";
 
 				 if (cb_verify_preview->CheckState == CheckState::Checked) {
 					 verify_preview = true;
@@ -2122,29 +2113,29 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 							 printf("----------------------------------------------\n");
 
 							 pb_gif->Visible = true;
-							 strcpy(file_path_string, app_path);
-							 strcat(file_path_string, "\\res");
-							 strcat(file_path_string, "\\fingerprint_verify_scan.gif");	
-							 sprintf(fingerprint_verifyScan, file_path_string);
+							 strcpy_s(file_path_string, 200, app_path);
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\fingerprint_verify_scan.gif");
+							 sprintf_s(fingerprint_verifyScan, sizeof(fingerprint_verifyScan), file_path_string);
 							 verifyScan = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)fingerprint_verifyScan));
 							 pb_gif->Image = verifyScan;
 
 							 pb_png->Visible = true;
 							 pb_png->Parent = pb_gif;
 							 pb_png->Location = System::Drawing::Point(0, 0);
-							 strcpy(file_path_string, app_path);
-							 strcat(file_path_string, "\\res");
-							 strcat(file_path_string, "\\verify");
-							 strcat(file_path_string, "\\fingerprint_verify_ok.png");
-							 sprintf(fingerprint_verifySuccess, file_path_string);
+							 strcpy_s(file_path_string, 200, app_path);
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\verify");
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\fingerprint_verify_ok.png");
+							 sprintf_s(fingerprint_verifySuccess, sizeof(fingerprint_verifySuccess), file_path_string);
 							 verifySuccess = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)fingerprint_verifySuccess));
 							 pb_png->Image = nullptr;
 
-							 strcpy(file_path_string, app_path);
-							 strcat(file_path_string, "\\res");
-							 strcat(file_path_string, "\\verify");
-							 strcat(file_path_string, "\\fingerprint_verify_fail.png");
-							 sprintf(fingerprint_verifyFail, file_path_string);
+							 strcpy_s(file_path_string, 200, app_path);
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\verify");
+							 strcat_s(file_path_string, sizeof(file_path_string), "\\fingerprint_verify_fail.png");
+							 sprintf_s(fingerprint_verifyFail, sizeof(fingerprint_verifyFail), file_path_string);
 							 verifyFail = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)fingerprint_verifyFail));
 						 }
 					 }				 
@@ -2203,7 +2194,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 									 //	 System::Drawing::Imaging::PixelFormat::Format24bppRgb, (System::IntPtr)frame->imageData);
 									 bmp = gcnew System::Drawing::Bitmap(frame->width, frame->height, frame->widthStep,
 										 System::Drawing::Imaging::PixelFormat::Format24bppRgb, (System::IntPtr)frame->imageData);
-									 System::Drawing::RectangleF rect(0, 0, pictureBox1->Width, pictureBox1->Height);
+									 System::Drawing::RectangleF rect(0, 0, (float)pictureBox1->Width, (float)pictureBox1->Height);
 									 graphics->DrawImage(bmp, rect);								 
 								 }
 								 quality_chk_flag = false;
@@ -2336,7 +2327,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 	private: System::Void btnSave_Click(System::Object^  sender, System::EventArgs^  e) {
 				 time_t		now = time(0);
 				 struct tm	tstruct;
-				 tstruct = *localtime(&now);
+				 localtime_s(&tstruct, &now);
 				 strftime(datetime_buf, sizeof(datetime_buf), "%Y%m%d_%H%M", &tstruct);
 			 
 				 SaveFileDialog^ savefiledialog = gcnew SaveFileDialog;
@@ -2428,16 +2419,16 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 				 }
 	}
 
-	private: array<System::String^>^ list_files() {
+	private: cli::array<System::String^>^ list_files() {
 				 System::String^ DS_file = ".DS_Store";
 
 				 //array<System::String^>^ file = Directory::GetFiles(Marshal::PtrToStringAnsi((IntPtr)databaseFile));
-				 array<System::String^>^ file = Directory::GetFiles(template_type_path);
-				 array<System::String^>^ fileList = gcnew array<System::String^>(file->Length);
+				 cli::array<System::String^>^ file = Directory::GetFiles(template_type_path);
+				 cli::array<System::String^>^ fileList = gcnew cli::array<System::String^>(file->Length);
 
 				 for (int i = 0; i < file->Length; i++) {
 					 if (DS_file == Path::GetFileName(file[i])) {
-						 printf("delete file name => %s\n", file[i]);
+						 //printf("delete file name => %s\n", file[i]);
 						 remove((char*)(void*)Marshal::StringToHGlobalAnsi(file[i]));
 					 }
 					 else {
@@ -2449,14 +2440,14 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 	}
 
 	private: void delete_files() {
-				 array<System::String^>^ file = Directory::GetFiles(template_type_path);
+				 cli::array<System::String^>^ file = Directory::GetFiles(template_type_path);
 				 for (int i = 0; i < file->Length; i++) {
 					 remove((char*)(void*)Marshal::StringToHGlobalAnsi(file[i]));
 				 }
 	}
 
-	private: array<System::Drawing::Bitmap^>^ get_enroll_progress_image() {
-				 array<System::Drawing::Bitmap^>^ progressList = gcnew array<System::Drawing::Bitmap^>(39);
+	private: cli::array<System::Drawing::Bitmap^>^ get_enroll_progress_image() {
+				 cli::array<System::Drawing::Bitmap^>^ progressList = gcnew cli::array<System::Drawing::Bitmap^>(39);
 
 				 char path[200];
 				 char pathString[200];
@@ -2465,20 +2456,20 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 				 intptr_t hFile = 0;
 				 int i = 0;
 
-				 strcpy(file_path_string, app_path);
-				 strcat(file_path_string, "\\res");
-				 strcat(file_path_string, "\\enroll");
-				 strcat(file_path_string, "\\*.png");
+				 strcpy_s(file_path_string, 200, app_path);
+				 strcat_s(file_path_string, sizeof(file_path_string), "\\res");
+				 strcat_s(file_path_string, sizeof(file_path_string), "\\enroll");
+				 strcat_s(file_path_string, sizeof(file_path_string), "\\*.png");
 
-				 strcpy(pathString, app_path);
-				 strcat(pathString, "\\res");
-				 strcat(pathString, "\\enroll");
-				 strcat(pathString, "\\%s");
+				 strcpy_s(pathString, 200, app_path);
+				 strcat_s(pathString, sizeof(pathString), "\\res");
+				 strcat_s(pathString, sizeof(pathString), "\\enroll");
+				 strcat_s(pathString, sizeof(pathString), "\\%s");
 
 				 hFile = _findfirst(file_path_string, &c_file);
 				 if (hFile != -1) {
 					 do {
-						 sprintf(path, pathString, c_file.name);
+						 sprintf_s(path, sizeof(path), pathString, c_file.name);
 						 progressList[i] = gcnew Bitmap(Marshal::PtrToStringAnsi((IntPtr)path));
 						 i++;
 					 } while (_findnext(hFile, &c_file) == 0);
@@ -2739,8 +2730,7 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 	private: System::Void tabControl_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 
-				 if (tabControl1->SelectedTab == tabPage1)
-				 {
+				 if (tabControl1->SelectedTab == tabPage1) {
 					 listView->Items->Clear();
 					 FILEPATH.clear();
 					 FILENAME.clear();
@@ -2751,11 +2741,8 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 					 cb_501->Checked = false;
 				 }
 
-				 if (tabControl1->SelectedTab == tabPage2)
-				 {
+				 if (tabControl1->SelectedTab == tabPage2) {
 					 printf("tabControl_SelectedIndexChanged\n");
-
-					 //pictureBox1->Image = logoImage;
 
 					 btnSave->Enabled = false;
 
@@ -2770,8 +2757,8 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 
 					 textBox2->Focus();
 
-					 label_quality->Text = "  " + 0;
-					 label_area->Text = "  " + 0;
+					 label_quality->Text = "  " + "0";
+					 label_area->Text = "  " + "0";
 
 					 if (start_capture) {
 						 capture_timer->Stop();
@@ -2805,28 +2792,18 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 						 if (enroll_save_image) {
 							 char imagePath[200];
 							 char string[200];
-							 strcpy(string, (char*)(void*)Marshal::StringToHGlobalAnsi(image_type_path));
-							 strcat(string, "\\");
-							 strcat(string, date_buf);
-							 strcat(string, "_");
-							 strcat(string, filename);
-							 strcat(string, "_");
-							 strcat(string, finger_idx_buf);
-							 strcat(string, "_%d.png");
+							 strcpy_s(string, 200, (char*)(void*)Marshal::StringToHGlobalAnsi(image_type_path));
+							 strcat_s(string, sizeof(string), "\\");
+							 strcat_s(string, sizeof(string), date_buf);
+							 strcat_s(string, sizeof(string), "_");
+							 strcat_s(string, sizeof(string), filename);
+							 strcat_s(string, sizeof(string), "_");
+							 strcat_s(string, sizeof(string), finger_idx_buf);
+							 strcat_s(string, sizeof(string), "_%d.png");
 
-							 for (int i = 1; i <= max_samples; i++)
-							 {
-								 sprintf(imagePath, string, i);
+							 for (int i = 1; i <= max_samples; i++) {
+								 sprintf_s(imagePath, sizeof(imagePath), string, i);
 								 remove(imagePath);
-								 /*
-								 if (access(imagePath, 0) == 0)
-								 {
-								 remove(imagePath);
-								 }
-								 else {
-								 break;
-								 }
-								 */
 							 }
 						 }
 					 }
@@ -2843,12 +2820,10 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 						 pb_gif->Visible = false;
 					 }
 
-					 if (sensorType == "301B")
-					 {
+					 if (sensorType == "301B") {
 						 cb_301b->Checked = true;
 					 }
-					 else if (sensorType == "501")
-					 {
+					 else if (sensorType == "501") {
 						 cb_501->Checked = true;
 					 }
 					 else {
@@ -2909,8 +2884,8 @@ private: System::Windows::Forms::CheckBox^  cb_enroll_save_image;
 				 if (System::IO::Directory::Exists(path))
 				 {
 					 //array<System::String^>^ file = Directory::GetFiles(Marshal::PtrToStringAnsi((IntPtr)path));
-					 array<System::String^>^ file = Directory::GetFiles(path);
-					 array<System::DateTime^>^ dateTime = gcnew array<System::DateTime^>(file->Length);
+					 cli::array<System::String^>^ file = Directory::GetFiles(path);
+					 cli::array<System::DateTime^>^ dateTime = gcnew cli::array<System::DateTime^>(file->Length);
 
 					 if (file->Length > 0)
 					 {
